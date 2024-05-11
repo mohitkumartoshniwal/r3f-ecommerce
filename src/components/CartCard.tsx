@@ -27,8 +27,9 @@ const CartCard = (props: Props) => {
         if (response) {
           removeItem(props.id);
         }
+      } else {
+        updateItemInCart({ id: props.id, updatedQuantity: props.quantity - 1 });
       }
-      updateItemInCart({ id: props.id, updatedQuantity: props.quantity - 1 });
     }
     props.refetch();
   }
